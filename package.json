@@ -1,0 +1,23 @@
+{
+  "name": "hotrestaurauntapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acard1990/hotrestaurauntapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Acard1990/hotrestaurauntapp/issues"
+  },
+  "homepage": "https://github.com/Acard1990/hotrestaurauntapp#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
