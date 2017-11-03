@@ -21,10 +21,10 @@ var reservations = [
 // Routes
 //=======================================================================================================================
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/home", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+  res.redirect('/');
 });
 
 app.get("/tables", function(req, res) {
@@ -39,19 +39,17 @@ app.get("/reserve", function(req, res) {
 // View specific tables or view all tables
 //=======================================================================================================================
 app.get("/api/tables", function(req, res) {
-  res.json(tables);
-  return res.json(false);
+  res.json(reservations.slice(0,5));
+});
+app.get("/api/waitlist", function(req, res) {
+  res.json(reservations.slice(5));
 });
 
 // Create new tables
 //=======================================================================================================================
-app.post("/reserve", function(req, res) {
+app.post("/api/tables", function(req, res) {
   var newTable = req.body;
-  if (reservations.length <= 5) {
-    reservations.push(newTable);
-  } else {
-    reservations.slice(5);
-  }
+  reservations.push(newTable);
   res.json(newTable);
 });
 
